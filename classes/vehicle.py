@@ -1,7 +1,6 @@
 import math
 from random import random, choice
 from functools import reduce
-from statistics import geometric_mean
 from .unit import Unit
 from .descriptors.operators import Operators
 
@@ -34,6 +33,10 @@ class Vehicle(Unit):
     def is_active(self):
         return self.health > 0 and \
             reduce(lambda a, b: a or b, [o.is_alive for o in self.operators])
+
+    @property
+    def active_operators(self):
+        return [operator for operator in self.operators if operator.is_alive]
 
     def get_damage(self, damage):
         self.health = max(0, self.health - damage * .6)
