@@ -1,9 +1,12 @@
-from random import random
+import math
+from random import random, choice
 from functools import reduce
 from statistics import geometric_mean
 from .unit import Unit
 from .descriptors.operators import Operators
 
+def gavg(xs):
+    return math.exp(math.fsum(math.log(x) for x in xs) / len(xs))
 
 class Vehicle(Unit):
 
@@ -19,13 +22,33 @@ class Vehicle(Unit):
 
     @property
     def atack(self):
-        return .5 * (1 + vehicle.health / 100) * gavg(operators.attack_success)
+        return .5 * (1 + self.health / 100) * \
+            gavg([operator.attack_success for operator in self.operators])
 
-    # @property
-    # def damage(self):
-    #     return .05 + self.experience / 100
+    @property
+    def damage(self):
+        return .1 + \
+            sum(operator.experience / 100 for operator in self.operators)
 
     @property
     def is_active(self):
         return self.health > 0 and \
             reduce(lambda a, b: a or b, [o.is_alive for o in self.operators])
+
+    def get_damage(self, damage):
+        self.health = max(0, self.health - damage * .6)
+        
+        if len(self.operators) > 1:
+            loser = choice(self.operators)
+            loser.get_damage(damage * .2)
+            other_operator_damage = damage * .2 / (len(self.operators) - 1)
+            for operator in self.operators:
+                if operator is not loser:
+                    operator.get_damage(other_operator_damage)
+        else:
+            operator = self.operator[0]
+            operator.get_damage(damage * .4)
+
+        if self.health == 0:
+            for operator in self.operators:
+                operator.health = 0
