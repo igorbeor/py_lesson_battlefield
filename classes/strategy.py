@@ -1,0 +1,1 @@
+# TODO: Make strategies using registry pattern
