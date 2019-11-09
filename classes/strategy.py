@@ -1,4 +1,5 @@
 from random import choice
+from operator import attrgetter
 
 REGISTRY = {}
 
@@ -21,8 +22,13 @@ class Strategy(metaclass=MetaRegistry):
 
 
 class Random(Strategy):
-    def choose(self, targets):
-        return 
+    def choose(self, targets: list):
+        return choice(targets)
 
-class Bar(Strategy):
-    pass
+class Weekest(Strategy):
+    def choose(self, targets: list):
+        return max(targets, key=attrgetter('power'))
+
+class Strongest(Strategy):
+    def choose(self, targets: list):
+        return min(targets, key=attrgetter('power'))
