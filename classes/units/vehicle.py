@@ -1,12 +1,12 @@
-from random import random, choice
+from ..rand import Rand
 from .unit import Unit
 from ..geometric_mean import geometric_mean
 
 
 class Vehicle(Unit):
 
-    def __init__(self, health: float, 
-                recharge: int, operators: list) -> None:
+    def __init__(self, operators: list, health: float = 200,
+                 recharge: int = 2000) -> None:
         super().__init__(health, recharge)
         self.operators = operators
 
@@ -15,7 +15,7 @@ class Vehicle(Unit):
         return self._operators
 
     @operators.setter
-    def operators(self, value) -> None:
+    def operators(self, value: list) -> None:
         if not isinstance(value, list):
             raise ValueError('operators must be list')
         if not 1 <= len(value) <= 3:
@@ -30,13 +30,13 @@ class Vehicle(Unit):
     @property
     def attack_success(self) -> float:
         return .5 * (1 + self.health / 100) * \
-            geometric_mean([operator.attack_success 
-                    for operator in self.active_operators])
+            geometric_mean([operator.attack_success
+                            for operator in self.active_operators])
 
     @property
     def damage(self) -> float:
-        return .1 + sum(operator.experience 
-                / 100 for operator in self.active_operators)
+        return .1 + sum(operator.experience / 100
+                        for operator in self.active_operators)
 
     @property
     def is_active(self) -> bool:
@@ -44,18 +44,18 @@ class Vehicle(Unit):
 
     @property
     def active_operators(self) -> list:
-        return [operator for operator in self.operators 
+        return [operator for operator in self.operators
                 if operator.is_active]
 
     def get_damage(self, damage: float) -> None:
         self.health = max(0, self.health - damage * .6)
-        
+
         if self.health == 0:
             for operator in self.active_operators:
                 operator.health = 0
 
         if len(self.active_operators) > 1:
-            loser = choice(self.active_operators)
+            loser = Rand.choice(self.active_operators)
             loser.get_damage(damage * .2)
             other_operator_damage = damage * .2 \
                 / (len(self.active_operators) - 1)
@@ -65,4 +65,3 @@ class Vehicle(Unit):
         else:
             operator = self.active_operators[0]
             operator.get_damage(damage * .4)
-

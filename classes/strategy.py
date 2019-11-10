@@ -1,34 +1,42 @@
-from random import choice
+from .rand import Rand
 from operator import attrgetter
 
-REGISTRY = {}
+
+STRATEGIES = {}
+
 
 def register_class(target_class):
-    REGISTRY[target_class.__name__] = target_class
+    STRATEGIES[target_class.__name__] = target_class
 
 
 class MetaRegistry(type):
 
     def __new__(meta, name, bases, class_dict):
         cls = type.__new__(meta, name, bases, class_dict)
-        if name not in REGISTRY:
+        if name not in STRATEGIES:
             register_class(cls)
         return cls
 
 
 class Strategy(metaclass=MetaRegistry):
-    def choose(self):
-        pass
+    @classmethod
+    def choose(cls, targets: list) -> object:
+        raise NotImplementedError
 
 
 class Random(Strategy):
-    def choose(self, targets: list):
-        return choice(targets)
+    @classmethod
+    def choose(cls, targets: list) -> object:
+        return Rand.choice(targets)
+
 
 class Weekest(Strategy):
-    def choose(self, targets: list):
+    @classmethod
+    def choose(cls, targets: list) -> object:
         return max(targets, key=attrgetter('power'))
 
+
 class Strongest(Strategy):
-    def choose(self, targets: list):
+    @classmethod
+    def choose(cls, targets: list) -> object:
         return min(targets, key=attrgetter('power'))

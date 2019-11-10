@@ -1,8 +1,12 @@
+from time import monotonic
+
+
 class Unit:
 
     def __init__(self, health: float, recharge: int) -> None:
         self.health = health
         self.recharge = recharge
+        self.recharge_timer = 0
 
     @property
     def health(self) -> float:
@@ -23,3 +27,10 @@ class Unit:
         if not 100 <= value <= 2000:
             raise ValueError('recharge value must be in range 100-2000')
         self._recharge = value
+
+    def do_recharge(self) -> None:
+        self.recharge_timer = round(monotonic() * 1000) + self.recharge
+
+    @property
+    def is_charged(self) -> bool:
+        return self.recharge_timer < round(monotonic() * 1000)

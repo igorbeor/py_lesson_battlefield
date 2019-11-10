@@ -1,10 +1,11 @@
-from random import random
+from ..rand import Rand
 from .unit import Unit
 
 
 class Solider(Unit):
 
-    def __init__(self, health: float, recharge: int, experience):
+    def __init__(self, health: float = 100,
+                 recharge: int = 500, experience: int = 0):
         super().__init__(health, recharge)
         self.experience = experience
 
@@ -20,7 +21,8 @@ class Solider(Unit):
 
     @property
     def attack_success(self) -> float:
-        return .5 * (1 + self.health/100) * random(50 + self.experience, 100) / 100
+        return .5 * (1 + self.health/100) \
+            * Rand.randint(50 + self.experience, 100) / 100
 
     @property
     def damage(self) -> float:
@@ -30,5 +32,8 @@ class Solider(Unit):
     def is_active(self) -> bool:
         return bool(self.health)
 
-    def get_damage(self, damage) -> None:
+    def get_damage(self, damage: float) -> None:
         self.health = max(0, self.health - damage)
+
+    def experience_gain(self) -> None:
+        self.experience = min(self.experience + 1, 50)
