@@ -18,25 +18,19 @@ class MetaRegistry(type):
         return cls
 
 
-class Strategy(metaclass=MetaRegistry):
-    @classmethod
-    def choose(cls, targets: list) -> object:
-        raise NotImplementedError
-
-
-class Random(Strategy):
+class Random(metaclass=MetaRegistry):
     @classmethod
     def choose(cls, targets: list) -> object:
         return Rand.choice(targets)
 
 
-class Weekest(Strategy):
+class Weekest(metaclass=MetaRegistry):
     @classmethod
     def choose(cls, targets: list) -> object:
         return max(targets, key=attrgetter('power'))
 
 
-class Strongest(Strategy):
+class Strongest(metaclass=MetaRegistry):
     @classmethod
     def choose(cls, targets: list) -> object:
         return min(targets, key=attrgetter('power'))

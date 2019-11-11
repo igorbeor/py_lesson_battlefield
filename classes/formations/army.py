@@ -9,7 +9,7 @@ class Army(Formation):
         self.name = name
 
     def attack(self, enemy: object) -> None:
-        if not self.subformations.is_active:
+        if not self.is_active:
             print(f"{self.name} cannot attack, because it has no active"
                   f" units")
             return

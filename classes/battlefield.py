@@ -5,7 +5,22 @@ from .formations.army import Army
 from random import randint, choice, shuffle
 from .rand import Rand
 from .strategy import STRATEGIES
+from json import load
 from typing import Optional
+
+
+ARMY_NAMES = [
+    'The Ruthless Ravagers',
+    'The Cluster',
+    'The Hell Hosts',
+    'The Death Pack',
+    'The Myriad',
+    'The Eclipse',
+    'The Gexamp',
+    'The Maron',
+    'The Akharid',
+    'The Aflobax'
+    ]
 
 
 class Battlefield:
@@ -30,26 +45,32 @@ class Battlefield:
         print('Winner: ', self.active_armies[0].name)
 
     @classmethod
-    def test(cls) -> object:
-        army_names = [
-            'The Ruthless Ravagers',
-            'The Cluster',
-            'The Hell Hosts',
-            'The Death Pack',
-            'The Myriad',
-            'The Eclipse',
-            'The Gexamp',
-            'The Maron',
-            'The Akharid',
-            'The Aflobax']
+    def create_new_buttlefield(cls) -> object:
+        seed = randint(0, 1000)
+        Rand.seed(seed)
         armies = list()
         for i in range(3):
-            shuffle(army_names)
-            name = army_names[0]
+            shuffle(ARMY_NAMES)
+            name = ARMY_NAMES[0]
             strategy = choice(list(STRATEGIES.keys()))
-            army_names.pop(0)
+            ARMY_NAMES.pop(0)
             armies.append(cls.create_army(strategy, name))
         return cls(armies)
+
+    @classmethod
+    def create_battlefield_from_config(cls) -> object:
+        try:
+            with open('config/config.json', 'r') as json_file:
+                config = load(json_file)
+        except FileNotFoundError:
+            raise FileNotFoundError('Last game not found!')
+        Rand.seed(config['seed'])
+        armies = list()
+        for army in config['armies']:
+            armies.append(cls.create_army(army['strategy'],
+                                          army['name'], army['squads']))
+        return cls(armies)
+
 
     @property
     def active_armies(self) -> list:
@@ -65,7 +86,7 @@ class Battlefield:
         if not operator_count:
             operator_count = randint(1, 3)
         for i in range(operator_count):
-            operators.append(cls.create_solider)
+            operators.append(cls.create_solider())
         return Vehicle(operators)
 
     @classmethod
@@ -76,11 +97,17 @@ class Battlefield:
             units_count = randint(5, 10)
             for i in range(units_count):
                 units_data.append({'type': choice(['Solider', 'Vehicle'])})
+        else:
+            units_data = units_data['units']
         for unit in units_data:
             if unit['type'] == 'Solider':
-                units.append(cls.create_solider)
+                units.append(cls.create_solider())
             elif unit['type'] == 'Vehicle':
-                units.append(cls.create_vehicle)
+                if 'operators' in unit:
+                    operator_count = len(unit['operators'])
+                else:
+                    operator_count = None
+                units.append(cls.create_vehicle(operator_count))
         return Squad(units)
 
     @classmethod

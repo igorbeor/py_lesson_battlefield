@@ -29,7 +29,7 @@ class Unit:
         self._recharge = value
 
     def do_recharge(self) -> None:
-        self.recharge_timer = round(monotonic() * 1000) + self.recharge
+        self.recharge_timer = round(monotonic() * 1000) + self.recharge / 100
 
     @property
     def is_charged(self) -> bool:

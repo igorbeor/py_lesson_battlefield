@@ -2,7 +2,7 @@ from classes.battlefield import Battlefield
 
 
 def main():
-    battlefield = Battlefield.test()
+    battlefield = Battlefield.create_battlefield_from_config()
     battlefield.battle()
 
 

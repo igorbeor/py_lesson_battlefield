@@ -5,7 +5,7 @@ from ..geometric_mean import geometric_mean
 
 class Vehicle(Unit):
 
-    def __init__(self, operators: list, health: float = 200,
+    def __init__(self, operators: list, health: float = 100,
                  recharge: int = 2000) -> None:
         super().__init__(health, recharge)
         self.operators = operators
@@ -62,6 +62,6 @@ class Vehicle(Unit):
             for operator in self.active_operators:
                 if operator is not loser:
                     operator.get_damage(other_operator_damage)
-        else:
+        elif len(self.active_operators) == 1:
             operator = self.active_operators[0]
             operator.get_damage(damage * .4)

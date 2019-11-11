@@ -1,0 +1,639 @@
+{
+    "seed": 773,
+    "armies": [
+        {
+            "name": "The Myriad",
+            "strategy": "Random",
+            "squads": [
+                {
+                    "units": [
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Solider"
+                        }
+                    ]
+                },
+                {
+                    "units": [
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "units": [
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "units": [
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Solider"
+                        }
+                    ]
+                },
+                {
+                    "units": [
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "The Hell Hosts",
+            "strategy": "Strongest",
+            "squads": [
+                {
+                    "units": [
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "units": [
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "units": [
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Solider"
+                        }
+                    ]
+                },
+                {
+                    "units": [
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "The Maron",
+            "strategy": "Weekest",
+            "squads": [
+                {
+                    "units": [
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "units": [
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                },
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Solider"
+                        },
+                        {
+                            "type": "Vehicle",
+                            "operators": [
+                                {
+                                    "type": "Solider"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Solider"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
