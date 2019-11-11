@@ -71,7 +71,6 @@ class Battlefield:
                                           army['name'], army['squads']))
         return cls(armies)
 
-
     @property
     def active_armies(self) -> list:
         return [army for army in self.armies if army.is_active]
