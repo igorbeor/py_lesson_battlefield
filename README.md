@@ -7,3 +7,7 @@ Once the simulator is started all the army squads will start attacking each othe
 ## How to run
 
 To run the simulator: `python3 app.py`
+
+## Tests
+
+To run unittest: `python3 -m unittest tests/test_solider.py`
