@@ -14,9 +14,7 @@ class Unit:
 
     @health.setter
     def health(self, value: int) -> None:
-        if not 0 <= value <= 100:
-            raise ValueError('health value must be in range 0-100')
-        self._health = value
+        self._health = max(min(value, 100), 0)
 
     @property
     def recharge(self) -> int:
@@ -24,9 +22,7 @@ class Unit:
 
     @recharge.setter
     def recharge(self, value: int) -> None:
-        if not 100 <= value <= 2000:
-            raise ValueError('recharge value must be in range 100-2000')
-        self._recharge = value
+        self._recharge = max(min(value, 2000), 100)
 
     def do_recharge(self) -> None:
         self.recharge_timer = round(monotonic() * 1000) + self.recharge / 100

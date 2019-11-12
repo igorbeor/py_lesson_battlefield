@@ -15,9 +15,7 @@ class Solider(Unit):
 
     @experience.setter
     def experience(self, value: int) -> None:
-        if not 0 <= value <= 50:
-            raise ValueError('experience value must be in range 0-50')
-        self._experience = value
+        self._experience = max(min(value, 50), 0)
 
     @property
     def attack_success(self) -> float:
